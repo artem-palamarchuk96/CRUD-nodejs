@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+	<link rel="stylesheet" type="text/css" href="css/main.css">
+</head>
+<body>
+	<div id="main" class="container">
+		<div class="row">
+			<div class="col-xs-6">
+				<h3>Adding persons to Db</h3>
+				<form name="personForm">
+					<div class="form-group">
+						<label for="name">Enter first name</label>
+						<input id="name" class="form-control" type="text" name="name" value="Artem">
+					</div>
+					<div class="form-group">
+						<label for="surname">Enter second name</label>
+						<input id="surname" class="form-control" type="text" name="surname" value="Palamarchuk">
+					</div>
+					<div class="form-group">
+						<label for="age">Enter age</label>
+						<input id="age" class="form-control" type="number" name="age" value="20">
+					</div>
+					<div class="form-group">
+						<label for="email">Enter email</label>
+						<input id="email" class="form-control" type="email" name="email" value="shmenski@mail.ru">
+					</div>
+					<div class="form-group">
+						<input id="add" class="btn btn-primary" type="button" name="add" value="Send">
+					</div>
+				</form>
+			</div>
+			<div class="col-xs-6">
+				<h3>List of persons from Db</h3>
+				<table id="result">
+					
+				</table>
+				<input id="load" class="btn btn-warning" type="button" name="load" value="Load">
+			</div>
+		</div>
+	</div>
+	
+
+	<!-- bottom scripts -->
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.6.1/angular.min.js"></script>
+	<script src="/js/common.js"></script>
+</body>
+</html>
