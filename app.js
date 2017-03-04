@@ -11,11 +11,21 @@ mongoose.connection.once('open', function() {
 	console.info('Success connection');
 });
 
-
-app.use(express.static(__dirname + '/public'));
+/* set caching for all static files */
+app.use(express.static(__dirname + '/public', {
+	setHeaders: function(res, path) {
+		res.setHeader('Cache-Control', 'public, max-age=5000');
+		// res.setHeader('Expires', 'Sat, 04 Mar 2017 20:01:52 GMT')
+	}
+}));
 app.use(bodyParser.json());
 
 
+app.get('/', function(req, res) {
+	// res.setHeader("Cache-Control", "public, max-age=2592000");
+	res.send();
+})
+ 
 app.post('/api/create', function(req, res) {
 	Person.createDoc(req.body).then(function(data) {
 		res.send();
